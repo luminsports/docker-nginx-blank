@@ -1,4 +1,7 @@
-FROM nginx:alpine
+FROM --platform=${BUILDPLATFORM:-linux/amd64} nginx:alpine
+
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
 
 ENV NGINX_PORT=80
 
